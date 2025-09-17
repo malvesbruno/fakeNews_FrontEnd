@@ -1,0 +1,40 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    background: radial-gradient(ellipse at bottom, #394c7b, #172341, #0A0F1C);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav{
+    background-color: #131c34;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 15%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #394c7b65;
+    backdrop-filter: blur(20px);
+    width: 60%;
+    border-radius: 10px;
+}
