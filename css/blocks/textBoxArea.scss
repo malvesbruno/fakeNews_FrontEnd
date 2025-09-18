@@ -1,0 +1,56 @@
+@import '../utils/mixins.scss';
+
+.card form input[type=text]{
+  width: 40%;
+  height: 2em;
+
+  @include text-box-background-color;
+  border-radius: 5px;
+  border: none;
+  padding-inline: 1em;
+  padding-block: 0.3em;
+  color: white;
+}
+
+.card form textarea{
+    width: 40%;
+    height: 4em;
+
+    @include text-box-background-color;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding-inline: 1em;
+    padding-block: 1em;
+  }
+  
+  .dateSelector {
+  color: white;
+  width: 40%;
+  height: 2em;
+  border: none;
+  border-radius: 5px;
+  padding: 0 15px 0 15px;
+
+  @include text-box-background-color;
+  
+  &_button {
+    margin: 20px 0 20px;
+    @include text-box-background-color;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px #6B84C4;
+
+    &:hover {
+      background-color: #9AAEE0; 
+      box-shadow: 0 0 12px #3e5ca8, 0 0 12px #10effd;
+      transform: scale(1.05);
+    }
+  }
+}
