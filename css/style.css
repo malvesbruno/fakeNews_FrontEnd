@@ -10,6 +10,7 @@ html{
 
 body{
     min-height: 100vh;
+    height: 100%;
     background: radial-gradient(ellipse at bottom, #394c7b, #172341, #0A0F1C);
     margin: 0;
     padding: 0;
@@ -31,6 +32,7 @@ nav{
     align-items: center;
     color: white;
     height: 15%;
+    z-index: 2;
 }
 
 nav a{
@@ -58,12 +60,99 @@ nav img:hover{
 }
 
 .card{
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #394c7b65;
     backdrop-filter: blur(20px);
-    width: 60%;
+    width: 80%;
     border-radius: 10px;
+}
+
+.card h1{
+    font-family: 'font_noFake';
+    color: #ffffff;
+    filter: drop-shadow(0px 2px 5px #10edfdb8);
+}
+
+.card .sides{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.card .sides>.side_input{
+    width: 70%;
+    background-color: #394c7b91;
+    border-radius: 10px;
+    margin-inline: 1em;
+}
+
+.card .sides>.side_history{
+    width: 30%;
+    background-color: #394c7b91;
+    border-radius: 10px;
+    margin-inline: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.card form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card form input[type=text]{
+    width: 40%;
+    height: 2em;
+    background: #5069a9;
+    border-radius: 20px;
+    border: none;
+     padding-inline: 1em;
+     padding-block: 0.3em;
+     color: white;
+}
+
+.card form input:focus{
+    outline: none;
+    filter: drop-shadow(0px 0px 5px #10edfd7f);
+}
+
+
+.card form input[type=text]::placeholder{
+    color: rgba(255, 255, 255, 0.73);
+    opacity: 1;
+}
+
+.card form textarea{
+    width: 40%;
+    height: 4em;
+    background: #5069a9;
+    border-radius: 5px;
+    border: none;
+    padding-inline: 1em;
+     padding-block: 1em;
+     color: white;
+}
+
+.card form textarea:focus{
+    outline: none;
+    filter: drop-shadow(0px 0px 5px #10edfd7f);
+}
+
+.card form textarea::placeholder{
+    color: rgba(255, 255, 255, 0.73);
+    opacity: 1;
+}
+
+.card h2{
+    font-family: 'font_noFake';
+    color: #10EFFD;
+    filter: drop-shadow(0px 2px 5px #0cbfccb8);
 }
