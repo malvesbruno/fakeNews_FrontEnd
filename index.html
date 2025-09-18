@@ -17,11 +17,14 @@
         <a href="https://www.aosfatos.org">Fontes confiáveis</a>
         <a>Contato</a>
     </nav>
+    <div class="floating-button scrollspy">
+        <button onclick="goTotop()" id="scrollspy">Δ</button>
+    </div>
     <div class="card">
         <h1 id="analisarNoticia">Bem Vindo ao Fake News AI</h1>
         <div class="sides">
             <div class="side_input">
-                <form action="">
+                <form action="" onsubmit="buscarResultado(event)">
                     <h2>Título</h2>
                     <input placeholder="título da noticia" type="text" id="title"></input>
                     <h2>Corpo</h2>
@@ -37,6 +40,7 @@
                 <h2>Histórico</h2>
             </div>
         </div>
+        <script src="js/main.js"></script>
     </div>
 </body>
 </html>
