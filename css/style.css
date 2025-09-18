@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "font_noFake";
+    src: url('../assets/font/Oswald-Medium.ttf');
+}
+
 html{
     margin: 0;
     padding: 0;
@@ -22,10 +27,34 @@ nav{
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     color: white;
     height: 15%;
+}
+
+nav a{
+    font-family: 'font_noFake';
+    cursor: pointer;
+    transition: 200ms;
+    color: #10EFFD;
+    text-decoration: none;
+}
+
+nav a:hover{
+    transform: scale(1.1);
+    color: #ffffff;
+    filter: drop-shadow(0px 0px 5px #10edfdb8);
+}
+
+nav img{
+    cursor: pointer;
+    transition: 200ms;
+}
+
+nav img:hover{
+    transform: scale(1.05);
+    filter:grayscale(1) brightness(2) drop-shadow(0px 0px 5px #10edfdb8);
 }
 
 .card{
