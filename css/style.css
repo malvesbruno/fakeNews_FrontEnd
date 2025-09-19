@@ -1,3 +1,6 @@
+@import './utils/mixins.scss';
+@import './blocks/textBoxArea.scss';
+
 @font-face {
     font-family: "font_noFake";
     src: url('../assets/font/Oswald-Medium.ttf');
@@ -110,37 +113,14 @@ nav img:hover{
     align-items: center;
 }
 
-.card form input[type=text]{
-    width: 40%;
-    height: 2em;
-    background: #5069a9;
-    border-radius: 20px;
-    border: none;
-     padding-inline: 1em;
-     padding-block: 0.3em;
-     color: white;
-}
-
 .card form input:focus{
     outline: none;
     filter: drop-shadow(0px 0px 5px #10edfd7f);
 }
 
-
 .card form input[type=text]::placeholder{
     color: rgba(255, 255, 255, 0.73);
     opacity: 1;
-}
-
-.card form textarea{
-    width: 40%;
-    height: 4em;
-    background: #5069a9;
-    border-radius: 5px;
-    border: none;
-    padding-inline: 1em;
-     padding-block: 1em;
-     color: white;
 }
 
 .card form textarea:focus{
