@@ -90,22 +90,6 @@ nav img:hover{
     flex-direction: row;
 }
 
-.card .sides>.side_input{
-    width: 70%;
-    background-color: #394c7b91;
-    border-radius: 10px;
-    margin-inline: 1em;
-}
-
-.card .sides>.side_history{
-    width: 30%;
-    background-color: #394c7b91;
-    border-radius: 10px;
-    margin-inline: 1em;
-    display: flex;
-    justify-content: center;
-}
-
 .card form{
     display: flex;
     flex-direction: column;
@@ -137,4 +121,49 @@ nav img:hover{
     font-family: 'font_noFake';
     color: #10EFFD;
     filter: drop-shadow(0px 2px 5px #0cbfccb8);
+}
+
+.floating-button.scrollspy{
+    position: fixed;
+    top: 15%;
+    right: 50%;
+    transform: translatex(50%);
+    z-index: 10;
+    display: block;
+    margin-top: 2em;
+    filter: drop-shadow(0px 2px 5px #0cbfcc58);
+}
+
+@keyframes comeDown {
+    0%{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+    
+}
+
+@keyframes comeUp {
+    0%{
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+    100%{
+        opacity: 0%;
+        transform: translateY(-20px);
+    }
+    
+}
+
+@keyframes spin_around {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
 }

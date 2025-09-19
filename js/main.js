@@ -46,20 +46,26 @@ function goTotop(){
     inicio.scrollIntoView({'behavior': 'smooth', 'block': 'end'})
 }
 
+const button = document.getElementById("scrollspy");
+
+// esconde o botão só quando a animação "comeUp" terminar
+button.addEventListener("animationend", (e) => {
+  if (e.animationName === "comeUp") {
+    button.style.opacity = "0";
+    button.style.pointerEvents = "none";
+  }
+});
+
 window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY; // quanto rolou
-  const windowHeight = window.innerHeight; // altura da tela
-  const documentHeight = document.documentElement.scrollHeight; // altura total
+  const scrollTop = window.scrollY;
+  const documentHeight = document.documentElement.scrollHeight;
 
-
-  // Exemplo: desabilitar botão ao chegar no fim
-  const button = document.getElementById("scrollspy");
-  if (scrollTop < documentHeight/10) {
-    button.style.animation = 'none';
-    button.style.opacity = 0
+  if (scrollTop < documentHeight / 10) {
+    button.style.animation = "comeUp 0.8s ease-in-out forwards";
   } else {
-    button.style.animation = 'comeDown 0.8s ease-in-out forwards'
-    button.style.opacity = 100
+    button.style.pointerEvents = "all"; // garante que aparece antes
+    button.style.opacity = "1";
+    button.style.animation = "comeDown 0.8s ease-in-out forwards";
   }
 });
 

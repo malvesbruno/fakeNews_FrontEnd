@@ -18,14 +18,14 @@
         <a>Contato</a>
     </nav>
     <div class="floating-button scrollspy">
-        <button onclick="goTotop()" id="scrollspy">Δ</button>
+        <button onclick="goTotop()" id="scrollspy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAABDCAYAAADHyrhzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABj0lEQVR4nO3Zu0oDQRSH8Q8VxMaZQrvYWSZpbHwBH8dn0NYH0MbSQkHIC9ipBC8QSGNnK17AXkEUwYUlBNyzl+zM5P+DLbNZPs6ZJARERERERERERESkmhVgH7gGRsAR0GEOOWAIfE9cz0CXOQtxMyVEdr0CPeaA+ydEPkifhHngrkCI5IM44NYQIrvegS0S4kqGSC6IB+4rhMiut9hXxlWciGQmxBsOyzFwnuqh6o0h1oEl4MwQpJfaaoyBtdxrF4GTVFbGVQiRVBBvXI1pITLWlemnNhFJTIgvcVgWZZmQ1r+H+AZDRBXENbAaUa6Mn8FETArye4ib4UQEPSGuxRBBBfGGX59NhQjiUPXGEHWcEUEGcQGsRh0rU/lQdcYQs5iIqp8y3bJ/8AwDD1EmyAuwaX2DvUhClAlyYb35VYBnRF1BPoBly41HkYWwBPkCVi03PYwwRNEgv89v0gGeIgyRD3I65fk/gZ0yN9wAjoGHv7U5sI5XyxaAXeASeAQGwHbbDyUiIiIiIiIiIjTjByYBMHrvKK5HAAAAAElFTkSuQmCC" alt="external-browser-browser-ui-small-size-optimized-set-flat-icons-inmotus-design-11"></button>
     </div>
     <div id="inicio">
 
     </div>
 
     <div class="card">
-        <h1 id="analisarNoticia">Bem Vindo ao Fake News AI</h1>
+        <h1 id="analisarNoticia">Bem Vindo ao NoFake</h1>
         <div class="sides">
             <div class="side_input">
                 <form action="" onsubmit="buscarResultado(event)">
@@ -42,6 +42,13 @@
             </div>
             <div class="side_history">
                 <h2>Histórico</h2>
+            </div>
+            
+        </div>
+        <div class="resultado_place">
+            <div class="resultado">
+                <h2>Resultado</h2>
+                <div class="circle_progression" style="--progress: 0.60;"></div>
             </div>
         </div>
         <script src="js/main.js"></script>
