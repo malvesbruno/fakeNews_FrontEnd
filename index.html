@@ -45,10 +45,23 @@
             </div>
             
         </div>
-        <div class="resultado_place">
+        <div class="resultado_place" id="resultado">
             <div class="resultado">
                 <h2>Resultado</h2>
-                <div class="circle_progression" style="--progress: 0.60;"></div>
+                <div class="mrRobot" id="robotBg">
+                    <img src="assets/img/fakeNews.png" alt="" id="robotFn" style="display: none">
+                    <img src="assets/img/news.png" alt="" id="robot" style="display: none">
+                </div>
+                <div class="circle_progression" style="--progress: 0.60;" id="loading"></div>
+                <div class="resposta" id="resposta_card">
+                    <div class="icon_position">
+                        <img src="assets/img/done.gif" id="true">
+                        <img src="assets/img/lastFrameDone.png" style="display: none;" id="true_lf">
+                        <img src="assets/img/close.gif" id="false">
+                        <img src="assets/img/lastFrameClose.png" style="display: none;" id="false_lf">
+                    </div>
+                    <h2>Provavelmente Verdadeira</h2>
+                </div>
             </div>
         </div>
         <script src="js/main.js"></script>

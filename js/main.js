@@ -1,9 +1,22 @@
+
+let resultado_place = document.getElementById('resultado');
+let true_lf = document.getElementById('true_lf');
+let false_lf = document.getElementById('false_lf')
+let true_icon = document.getElementById('true');
+let false_icon = document.getElementById('false');
+let loading = document.getElementById('loading');
+let resposta_card = document.getElementById('resposta_card');
+let robotBg = document.getElementById('robotBg')
+let robot = document.getElementById('robot')
+let robotFn = document.getElementById('robotFn')
+
+
 async function buscarResultado(event){
     event.preventDefault(); 
 
     let text = tratarDados();
     try{
-        let resposta = await fetch('http://fake-news-api-env.eba-mtctpdyg.us-east-2.elasticbeanstalk.com/predict', {
+        /* let resposta = await fetch('http://fake-news-api-env.eba-mtctpdyg.us-east-2.elasticbeanstalk.com/predict', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -14,17 +27,68 @@ async function buscarResultado(event){
             throw new Error("Erro na requisição: " + response.status);
         }
         let result = resposta.json();
-        console.log("Resposta da API:", result);
+        console.log("Resposta da API:", result); */
+
+
+        let result = 0;
+        apagar_items();
 
         // Se a API retorna só 0 ou 1:
         if (result === 1) {
-            alert("✅ Provavelmente verdadeira");
+          resultado_place.style.display = 'flex';
+          true_icon.style.display = 'block'
+          removerLoaderEMostrarResposta(result)
+          setTimeout(() => {
+            true_icon.style.display = 'none'
+            true_lf.style.display = 'block'
+          }, 2700)
         } else {
-            alert("❌ Provavelmente falsa");
+            resultado_place.style.display = 'flex';
+            false_icon.style.display = 'block'
+            removerLoaderEMostrarResposta(result)
+          setTimeout(() => {
+            false_icon.style.display = 'none'
+            false_lf.style.display = 'block'
+          }, 2700)
         }
     } catch(err) {
         console.error("Erro:", err);
     }
+}
+
+function mostrar_robot(resposta){
+  robotBg.style.display = 'flex';
+  if(resposta == 1){
+    robotBg.style.backgroundColor = 'green';
+     robot.style.display = 'block';
+    console.log(robot)
+  } else{
+     robotBg.style.backgroundColor = 'rgba(230, 47, 47, 0.905)'
+    robotFn.style.display = 'block';
+  }
+
+}
+
+function apagar_items(){
+      itens = [true_icon, false_icon, true_lf, false_lf, resposta_card, robotBg]
+      itens.map((el) => {
+        el.style.display = 'none';
+      })
+      loading.style.display = 'flex'
+}
+
+function irParaAResposta(){
+    loading.scrollIntoView({'behavior': 'smooth', 'block': 'start'});
+}
+
+function removerLoaderEMostrarResposta(result){
+  irParaAResposta();
+  setTimeout(()=>{
+            loading.style.display = 'none'
+            resposta_card.style.display = 'flex'
+            mostrar_robot(result)
+          }, 2000)
+
 }
 
 function tratarDados(){
