@@ -9,6 +9,10 @@ let resposta_card = document.getElementById('resposta_card');
 let robotBg = document.getElementById('robotBg')
 let robot = document.getElementById('robot')
 let robotFn = document.getElementById('robotFn')
+let text_result = document.getElementById("text_result")
+let disclaimer = document.getElementById("disclaimer")
+let input = document.getElementById('input')
+let history = document.getElementById('history')
 
 
 async function buscarResultado(event){
@@ -30,7 +34,7 @@ async function buscarResultado(event){
         console.log("Resposta da API:", result); */
 
 
-        let result = 0;
+        let result = 1;
         apagar_items();
 
         // Se a API retorna só 0 ou 1:
@@ -56,37 +60,59 @@ async function buscarResultado(event){
     }
 }
 
+
+function mostrar_card(resposta){
+  resposta_card.style.display = 'flex'
+  resposta_card.style.border = '1em solid rgba(255, 255, 255, 0.136)'
+  if(resposta == 1){
+    resposta_card.style.backgroundColor = 'rgba(31, 165, 31)';
+  } else{
+    resposta_card.style.backgroundColor = 'rgba(230, 47, 47)';
+    
+  }
+}
+
+function mostrar_resultado(resposta){
+  if (resposta == 1){
+    text_result.innerText = 'Provavelmente Verdadeira'
+  } else{
+    text_result.innerText = 'Provavelmente Falsa'
+  }
+}
+
 function mostrar_robot(resposta){
   robotBg.style.display = 'flex';
   if(resposta == 1){
-    robotBg.style.backgroundColor = 'green';
+    robotBg.style.backgroundColor = 'rgba(31, 165, 31)';
      robot.style.display = 'block';
-    console.log(robot)
   } else{
-     robotBg.style.backgroundColor = 'rgba(230, 47, 47, 0.905)'
+     robotBg.style.backgroundColor = 'rgba(230, 47, 47)'
     robotFn.style.display = 'block';
   }
 
 }
 
 function apagar_items(){
-      itens = [true_icon, false_icon, true_lf, false_lf, resposta_card, robotBg]
+      itens = [true_icon, false_icon, true_lf, false_lf, resposta_card, robotBg, disclaimer]
       itens.map((el) => {
         el.style.display = 'none';
       })
       loading.style.display = 'flex'
 }
 
-function irParaAResposta(){
-    loading.scrollIntoView({'behavior': 'smooth', 'block': 'start'});
+function irParaElemento(el){
+    el.scrollIntoView({'behavior': 'smooth', 'block': 'center'});
 }
 
 function removerLoaderEMostrarResposta(result){
-  irParaAResposta();
+  irParaElemento(loading);
   setTimeout(()=>{
             loading.style.display = 'none'
-            resposta_card.style.display = 'flex'
+            disclaimer.style.display = 'flex'
+            mostrar_card(result)
             mostrar_robot(result)
+            mostrar_resultado(result)
+            irParaElemento(robot)
           }, 2000)
 
 }
@@ -107,7 +133,7 @@ function tratarDados(){
 
 function goTotop(){
     let inicio = document.getElementById("inicio")
-    inicio.scrollIntoView({'behavior': 'smooth', 'block': 'end'})
+    inicio.scrollIntoView({'behavior': 'smooth', 'block': 'start'})
 }
 
 const button = document.getElementById("scrollspy");
@@ -151,4 +177,34 @@ function salvarPesquisa(novaPesquisa) {
 function pegarHistorico() {
     // Retorna para 
   return JSON.parse(localStorage.getItem('historicoPesquisas')) || [];
+}
+
+
+function definirTamanhoHistorico(){
+  historico = pegarHistorico();
+  if (historico.length != 0){
+    input.style.flexBasis = '100%'
+    history.style.display = 'none'
+  } else{
+    input.style.flexBasis = '70%'
+    history.style.display = 'flex'
+  }
+}
+
+definirTamanhoHistorico()
+
+function navbar_buttons(el){
+  let element;
+  if (el == 'sobre'){
+    element = document.getElementById('sobre')
+  } else if(el == 'analisar'){
+    element = document.getElementById('input')
+  } else{
+    element = document.getElementById("contato")
+  }
+  if (el == 'analisar' || el == 'contato'){
+  element.scrollIntoView({'behavior': 'smooth', 'block': 'end'});
+  } else{
+    element.scrollIntoView({'behavior': 'smooth', 'block': 'start'});
+  }
 }

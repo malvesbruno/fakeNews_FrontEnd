@@ -6,3 +6,16 @@
 @mixin card-box-background-color{
   background-color: #394c7b91;
 }
+
+@mixin font-famiy-noFake{
+  font-family: 'font_noFake';
+}
+
+@mixin nav-footer-background-color{
+  background-color: #131c34;
+}
+
+@mixin nav-footer-text-color{
+  transition: 200ms;
+  color: #10EFFD;
+}
