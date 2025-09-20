@@ -11,8 +11,13 @@ let robot = document.getElementById('robot')
 let robotFn = document.getElementById('robotFn')
 let text_result = document.getElementById("text_result")
 let disclaimer = document.getElementById("disclaimer")
-let input = document.getElementById('input')
 let history = document.getElementById('history')
+let contato = document.getElementById("contato")
+let input = document.getElementById('input')
+let sobre = document.getElementById('sobre')
+let contatoNav = document.getElementById("contatoNav")
+let inputNav = document.getElementById('analisarNav')
+let sobreNav = document.getElementById('sobreNav')
 
 
 async function buscarResultado(event){
@@ -159,6 +164,44 @@ window.addEventListener("scroll", () => {
   }
 });
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+      if (entry.isIntersecting){
+        if(entry.target.id == 'input'){
+          inputNav.style.transform = 'scale(1.1)'
+          inputNav.style.color = "#ffffff"
+          inputNav.style.filter = "drop-shadow(0px 0px 5px #10edfdb8)"
+        }
+        else if (entry.target.id == 'sobre'){
+          sobreNav.style.transform = 'scale(1.1)'
+          sobreNav.style.color = "#ffffff"
+          sobreNav.style.filter = "drop-shadow(0px 0px 5px #10edfdb8)"
+        } else{
+          contatoNav.style.transform = 'scale(1.1)'
+          contatoNav.style.color = "#ffffff"
+          contatoNav.style.filter = "drop-shadow(0px 0px 5px #10edfdb8)"
+        }
+      } else {
+        if(entry.target.id == 'input'){
+          inputNav.style.transform = 'scale(1.0)'
+          inputNav.style.color = "#10EFFD"
+          inputNav.style.filter = "none"
+        }
+        else if (entry.target.id == 'sobre'){
+          sobreNav.style.transform = 'scale(1.0)'
+          sobreNav.style.color = "#10EFFD"
+          sobreNav.style.filter = "none"
+        } else{
+          contatoNav.style.transform = 'scale(1.0)'
+          contatoNav.style.color = "#10EFFD"
+          contatoNav.style.filter = "none"
+      }
+    }});
+}, {threshold: 0.5})
+
+observer.observe(input)
+observer.observe(sobre)
+observer.observe(contato)
 
 function salvarPesquisa(novaPesquisa) {
   // Pega o histórico atual do localStorage
@@ -196,15 +239,25 @@ definirTamanhoHistorico()
 function navbar_buttons(el){
   let element;
   if (el == 'sobre'){
-    element = document.getElementById('sobre')
+    element = sobre
   } else if(el == 'analisar'){
-    element = document.getElementById('input')
+    element = input
   } else{
-    element = document.getElementById("contato")
+    element = contato
   }
   if (el == 'analisar' || el == 'contato'){
   element.scrollIntoView({'behavior': 'smooth', 'block': 'end'});
   } else{
     element.scrollIntoView({'behavior': 'smooth', 'block': 'start'});
+  }
+}
+
+function irParaSite(el){
+  if (el == 'linkedin'){
+    window.open('https://www.linkedin.com/in/bruno-massuete-7a91b3234')
+  } else if(el == 'github'){
+    window.open('https://github.com/malvesbruno')
+  } else{
+    window.open('https://malvesbruno.github.io/NewPortifolio/')
   }
 }

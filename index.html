@@ -12,10 +12,10 @@
         <div style="width: 10%;"></div>
         <img src="/assets/img/icon.png" alt="icon" height="100%">
         <div style="width: 30%;"></div>
-        <a onclick="navbar_buttons('analisar')">Analisar notícia</a>
-        <a onclick="navbar_buttons('sobre')">Sobre</a>
+        <a onclick="navbar_buttons('analisar')" id="analisarNav">Analisar notícia</a>
+        <a onclick="navbar_buttons('sobre')" id="sobreNav">Sobre</a>
+        <a onclick="navbar_buttons('contato')" id="contatoNav">Contato</a>
         <a href="https://www.aosfatos.org">Fontes confiáveis</a>
-        <a onclick="navbar_buttons('contato')">Contato</a>
     </nav>
     <div class="floating-button scrollspy">
         <button onclick="goTotop()" id="scrollspy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAABDCAYAAADHyrhzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABj0lEQVR4nO3Zu0oDQRSH8Q8VxMaZQrvYWSZpbHwBH8dn0NYH0MbSQkHIC9ipBC8QSGNnK17AXkEUwYUlBNyzl+zM5P+DLbNZPs6ZJARERERERERERESkmhVgH7gGRsAR0GEOOWAIfE9cz0CXOQtxMyVEdr0CPeaA+ydEPkifhHngrkCI5IM44NYQIrvegS0S4kqGSC6IB+4rhMiut9hXxlWciGQmxBsOyzFwnuqh6o0h1oEl4MwQpJfaaoyBtdxrF4GTVFbGVQiRVBBvXI1pITLWlemnNhFJTIgvcVgWZZmQ1r+H+AZDRBXENbAaUa6Mn8FETArye4ib4UQEPSGuxRBBBfGGX59NhQjiUPXGEHWcEUEGcQGsRh0rU/lQdcYQs5iIqp8y3bJ/8AwDD1EmyAuwaX2DvUhClAlyYb35VYBnRF1BPoBly41HkYWwBPkCVi03PYwwRNEgv89v0gGeIgyRD3I65fk/gZ0yN9wAjoGHv7U5sI5XyxaAXeASeAQGwHbbDyUiIiIiIiIiIjTjByYBMHrvKK5HAAAAAElFTkSuQmCC" alt="external-browser-browser-ui-small-size-optimized-set-flat-icons-inmotus-design-11"></button>
@@ -138,19 +138,19 @@
             <div class="contato" id="contato">
                 <h1>Contato</h1>
                 <div class="contato_flex">
-                    <div class="sobre-item">
+                    <div class="sobre-item" onclick="irParaSite('linkedin')">
                         <img src="assets/img/logotipo-do-linkedin.png" alt="Cooperadores">
                         <div class="sobre-item-text">
                                 <h3>Linkedin</h3>
                         </div>
                     </div>
-                    <div class="sobre-item">
+                    <div class="sobre-item" onclick="irParaSite('github')">
                         <img src="assets/img/github.png" alt="Cooperadores">
                         <div class="sobre-item-text">
                                 <h3>Github</h3>
                         </div>
                     </div>
-                    <div class="sobre-item">
+                    <div class="sobre-item" onclick="irParaSite('portfolio')">
                         <img src="assets/img/portfolio.png" alt="Cooperadores">
                         <div class="sobre-item-text">
                                 <h3>Portfólio</h3>
