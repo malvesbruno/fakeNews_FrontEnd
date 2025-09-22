@@ -158,12 +158,13 @@ body{
   transition: 800ms;
   color: white;
     &:focus{
-      transform: scale(1.1);
+      transform: scale(1.04);
     }
 }
 
 .card form textarea{
     width: 40%;
+    max-width: 40%;
     height: 4em;
     @include font-famiy-noFake;
     @include text-box-background-color;
@@ -174,7 +175,7 @@ body{
     padding-block: 1em;
     transition: 800ms;
     &:focus{
-      transform: scale(1.1);
+      transform: scale(1.04);
     }
   }
   
@@ -228,7 +229,7 @@ footer{
   @include text-box-background-color;
 
   &:focus{
-      transform: scale(1.1);
+      transform: scale(1.04);
     }
 
    &::-webkit-calendar-picker-indicator {
@@ -252,7 +253,7 @@ footer{
     &:hover {
       background-color: #9AAEE0; 
       box-shadow: 0 0 12px #3e5ca8, 0 0 12px #10effd;
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
   }

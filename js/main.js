@@ -237,7 +237,7 @@ function pegarHistorico() {
 
 function definirTamanhoHistorico(){
   historico = pegarHistorico();
-  if (historico.length == 0){
+  if (historico.length != 0){
     input.style.flexBasis = '100%'
     input.style.marginRight = '1em'
     history.style.display = 'none'

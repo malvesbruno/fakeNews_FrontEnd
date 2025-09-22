@@ -1,0 +1,60 @@
+.side_history{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  
+  @include card-box-background-color;
+  border-radius: 10px;
+  margin-inline: 1em;
+  align-items: center;
+  padding-top: 15px;
+
+  &-card {
+    display: flex;
+    flex-direction:  column;
+
+    margin-bottom: 15px;
+
+    height: 100%;
+    width: 90%;
+    
+  }
+  
+  &-block {
+    height: 100%;
+    width: 100%;
+
+    @include text-box-background-color;
+    margin-top: 20px;
+    border-radius: 5px;
+
+    animation: grow 400ms 400ms forwards ease-in-out;
+    
+    
+  }
+  
+  &-title {
+    @include history-title-font;
+    
+    display: flex;
+    height: 20%;
+    width: 100%;
+    transition: 0.8s;
+    
+    align-items: center;
+    justify-content: center;
+
+    &:hover{
+      color: #fff;
+    }
+  }
+  
+  &-score{
+    display: flex;
+    height: 80%;
+    width: 100%;
+    
+    align-items: center;
+    justify-content: center;
+  }
+}
