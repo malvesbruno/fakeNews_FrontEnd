@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
+    <nav class="nav">
         <div style="width: 10%;"></div>
-        <img src="/assets/img/icon.png" alt="icon" height="100%">
+        <img src="/assets/img/icon.png" alt="icon" height="100%" class="nav__img">
         <div style="width: 30%;"></div>
-        <a onclick="navbar_buttons('analisar')" id="analisarNav">Analisar notícia</a>
-        <a onclick="navbar_buttons('sobre')" id="sobreNav">Sobre</a>
-        <a onclick="navbar_buttons('contato')" id="contatoNav">Contato</a>
-        <a href="https://www.aosfatos.org">Fontes confiáveis</a>
+        <a onclick="navbar_buttons('analisar')" id="analisarNav" class="nav__a">Analisar notícia</a>
+        <a onclick="navbar_buttons('sobre')" id="sobreNav" class="nav__a">Sobre</a>
+        <a onclick="navbar_buttons('contato')" id="contatoNav" class="nav__a">Contato</a>
+        <a href="https://www.aosfatos.org" class="nav__a">Fontes confiáveis</a>
     </nav>
     <div class="floating-button scrollspy">
         <button onclick="goTotop()" id="scrollspy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAABDCAYAAADHyrhzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABj0lEQVR4nO3Zu0oDQRSH8Q8VxMaZQrvYWSZpbHwBH8dn0NYH0MbSQkHIC9ipBC8QSGNnK17AXkEUwYUlBNyzl+zM5P+DLbNZPs6ZJARERERERERERESkmhVgH7gGRsAR0GEOOWAIfE9cz0CXOQtxMyVEdr0CPeaA+ydEPkifhHngrkCI5IM44NYQIrvegS0S4kqGSC6IB+4rhMiut9hXxlWciGQmxBsOyzFwnuqh6o0h1oEl4MwQpJfaaoyBtdxrF4GTVFbGVQiRVBBvXI1pITLWlemnNhFJTIgvcVgWZZmQ1r+H+AZDRBXENbAaUa6Mn8FETArye4ib4UQEPSGuxRBBBfGGX59NhQjiUPXGEHWcEUEGcQGsRh0rU/lQdcYQs5iIqp8y3bJ/8AwDD1EmyAuwaX2DvUhClAlyYb35VYBnRF1BPoBly41HkYWwBPkCVi03PYwwRNEgv89v0gGeIgyRD3I65fk/gZ0yN9wAjoGHv7U5sI5XyxaAXeASeAQGwHbbDyUiIiIiIiIiIjTjByYBMHrvKK5HAAAAAElFTkSuQmCC" alt="external-browser-browser-ui-small-size-optimized-set-flat-icons-inmotus-design-11"></button>
@@ -29,30 +29,30 @@
     <img src="assets/img/icon.png" class="mobile_icon">
 
     <div class="card">
-        <h1 id="analisarNoticia">Bem Vindo ao NoFake</h1>
-        <div class="sides">
-            <div class="side_input" id="input">
-                <form action="" onsubmit="buscarResultado(event)">
-                    <h1>Analisar Notícia</h1>
-                    <h2>Título</h2>
-                    <input placeholder="título da noticia" type="text" id="title"></input>
-                    <h2>Corpo</h2>
-                    <textarea name="Corpo" id="corpo" placeholder="corpo da notícia"></textarea>
-                    <h2>Portal</h2>
-                    <input placeholder="portal da noticia" type="text" id="portal"></input>
-                    <h2>Data</h2>
+        <h1 id="analisarNoticia" class="card__title">Bem Vindo ao NoFake</h1>
+        <div class="card__sides">
+            <div class="card__sides-side_input" id="input">
+                <form action="" onsubmit="buscarResultado(event)" class="card__form">
+                    <h1 class="card__title">Analisar Notícia</h1>
+                    <h2 class="card__subtitle">Título</h2>
+                    <input placeholder="título da noticia" type="text" id="title" class="card__form-input"></input>
+                    <h2 class="card__subtitle">Corpo</h2>
+                    <textarea name="Corpo" id="corpo" placeholder="corpo da notícia" class="card__form-textarea"></textarea>
+                    <h2 class="card__subtitle">Portal</h2>
+                    <input placeholder="portal da noticia" type="text" id="portal" class="card__form-input"></input>
+                    <h2 class="card__subtitle">Data</h2>
                     <input class="dateSelector" type="date" id="date">
                     <input class="dateSelector_button" type="submit"></input>
                 </form>
             </div>
-            <div class="side_history" id="history">
+            <div class="card__sides-side_history" id="history">
                 <h2>Histórico</h2>
             </div>
             
         </div>
         <div class="resultado_place" id="resultado">
             <div class="resultado">
-                <h1>Resultado</h1>
+                <h1 class="card__title">Resultado</h1>
                 <div class="mrRobot" id="robotBg">
                     <img src="assets/img/fakeNews.png" alt="" id="robotFn" style="display: none">
                     <img src="assets/img/news.png" alt="" id="robot" style="display: none">
@@ -79,7 +79,7 @@
         </div>
         <div class="sobre_place" id="sobre">
                 <div class="sobre" >
-                    <h1>Sobre</h1>
+                    <h1 class="card__title">Sobre</h1>
                     <div class="sobre_flex">
                         <div class="sobre-item">
                             <img src="assets/img/alvo-com-flecha.png" alt="Objetivo">
@@ -141,10 +141,10 @@
         </div>
         <div class="contato_place">
             <div class="contato" id="contato">
-                <h1>Contato</h1>
+                <h1 class="card__title">Contato</h1>
                 <div class="person">
                     <img src="assets/img/Bruno Massuete Alves.jpg" alt="Bruno">
-                    <h2>Bruno Massuete Alves</h2>
+                    <h2 class="card__subtitle">Bruno Massuete Alves</h2>
                 </div>
                 <div class="contato_flex">
                     <div class="sobre-item" onclick="irParaSite('bruno','linkedin')">
@@ -168,7 +168,7 @@
                 </div>
                 <div class="person">
                     <img src="assets/img/Igor H. Rocha Miranda.jpg" alt="Igor">
-                    <h2>Igor H. Rocha Miranda</h2>
+                    <h2 class="card__subtitle">Igor H. Rocha Miranda</h2>
                 </div>
                 <div class="contato_flex">
                     <div class="sobre-item" onclick="irParaSite('igor','linkedin')">

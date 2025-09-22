@@ -24,7 +24,7 @@ body{
     position: relative;
 }
 
-nav{
+.nav{
     background-color: #131c34;
     margin: 0;
     position: fixed;
@@ -39,7 +39,7 @@ nav{
     z-index: 2;
 }
 
-nav a{
+.nav__a{
     font-family: 'font_noFake';
     cursor: pointer;
     transition: 200ms;
@@ -47,18 +47,18 @@ nav a{
     text-decoration: none;
 }
 
-nav a:hover{
+.nav__a:hover{
     transform: scale(1.1);
     color: #ffffff;
     filter: drop-shadow(0px 0px 5px #10edfdb8);
 }
 
-nav img{
+.nav__img img{
     cursor: pointer;
     transition: 200ms;
 }
 
-nav img:hover{
+.nav__img:hover{
     transform: scale(1.05);
     filter:grayscale(1) brightness(2) drop-shadow(0px 0px 5px #10edfdb8);
 }
@@ -76,13 +76,13 @@ nav img:hover{
     border-radius: 10px;
 }
 
-.card h1{
+.card__title{
     font-family: 'font_noFake';
     color: #ffffff;
     filter: drop-shadow(0px 2px 5px #10edfdb8);
 }
 
-.card .sides{
+.card__sides{
     width: 100%;
     margin-block: 1em;
     display: flex;
@@ -91,34 +91,34 @@ nav img:hover{
     flex-direction: row;
 }
 
-.card form{
+.card__form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.card form input:focus{
+.card__form-input:focus{
     outline: none;
     filter: drop-shadow(0px 0px 5px #10edfd7f);
 }
 
-.card form input[type=text]::placeholder{
+.card__form-input[type=text]::placeholder{
     color: rgba(255, 255, 255, 0.73);
     opacity: 1;
 }
 
-.card form textarea:focus{
+.card__form-textarea:focus{
     outline: none;
     filter: drop-shadow(0px 0px 5px #10edfd7f);
 }
 
-.card form textarea::placeholder{
+.card__form-textarea::placeholder{
     color: rgba(255, 255, 255, 0.73);
     opacity: 1;
 }
 
-.card h2{
+.card__subtitle{
     font-family: 'font_noFake';
     color: #10EFFD;
     filter: drop-shadow(0px 2px 5px #0cbfccb8);
@@ -283,14 +283,14 @@ footer{
 
 }
 
-.card .sides>.side_input{
+.card__sides-side_input{
     width: 70%;
     @include card-box-background-color;
     border-radius: 10px;
     margin-left: 1em;
 }
 
-.card .sides>.side_history{
+.card__sides-side_history{
     width: 30%;
     @include card-box-background-color;
     border-radius: 10px;

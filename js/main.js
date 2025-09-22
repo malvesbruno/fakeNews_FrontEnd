@@ -46,7 +46,7 @@ async function buscarResultado(event){
         console.log("Resposta da API:", result); */
 
 
-        let result = 1;
+        let result = 0;
         apagar_items();
 
         // Se a API retorna só 0 ou 1:
