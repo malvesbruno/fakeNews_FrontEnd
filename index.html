@@ -20,8 +20,13 @@
     <div class="floating-button scrollspy">
         <button onclick="goTotop()" id="scrollspy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAABDCAYAAADHyrhzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABj0lEQVR4nO3Zu0oDQRSH8Q8VxMaZQrvYWSZpbHwBH8dn0NYH0MbSQkHIC9ipBC8QSGNnK17AXkEUwYUlBNyzl+zM5P+DLbNZPs6ZJARERERERERERESkmhVgH7gGRsAR0GEOOWAIfE9cz0CXOQtxMyVEdr0CPeaA+ydEPkifhHngrkCI5IM44NYQIrvegS0S4kqGSC6IB+4rhMiut9hXxlWciGQmxBsOyzFwnuqh6o0h1oEl4MwQpJfaaoyBtdxrF4GTVFbGVQiRVBBvXI1pITLWlemnNhFJTIgvcVgWZZmQ1r+H+AZDRBXENbAaUa6Mn8FETArye4ib4UQEPSGuxRBBBfGGX59NhQjiUPXGEHWcEUEGcQGsRh0rU/lQdcYQs5iIqp8y3bJ/8AwDD1EmyAuwaX2DvUhClAlyYb35VYBnRF1BPoBly41HkYWwBPkCVi03PYwwRNEgv89v0gGeIgyRD3I65fk/gZ0yN9wAjoGHv7U5sI5XyxaAXeASeAQGwHbbDyUiIiIiIiIiIjTjByYBMHrvKK5HAAAAAElFTkSuQmCC" alt="external-browser-browser-ui-small-size-optimized-set-flat-icons-inmotus-design-11"></button>
     </div>
+
+    <div class="floating-button menu">
+        <button onclick="showMenu()" id="menubtn"><img src="assets/img/icons8-menu-50.png" alt="menu" id="open"><img src="assets/img/icons8-close-50.png" alt="menu" id="close"></button>
+    </div>
     <div id="inicio">
     </div>
+    <img src="assets/img/icon.png" class="mobile_icon">
 
     <div class="card">
         <h1 id="analisarNoticia">Bem Vindo ao NoFake</h1>
@@ -137,23 +142,45 @@
         <div class="contato_place">
             <div class="contato" id="contato">
                 <h1>Contato</h1>
+                <div class="person">
+                    <img src="assets/img/Bruno Massuete Alves.jpg" alt="Bruno">
+                    <h2>Bruno Massuete Alves</h2>
+                </div>
                 <div class="contato_flex">
-                    <div class="sobre-item" onclick="irParaSite('linkedin')">
-                        <img src="assets/img/logotipo-do-linkedin.png" alt="Cooperadores">
+                    <div class="sobre-item" onclick="irParaSite('bruno','linkedin')">
+                        <img src="assets/img/logotipo-do-linkedin.png" alt="linkedin">
                         <div class="sobre-item-text">
                                 <h3>Linkedin</h3>
                         </div>
                     </div>
-                    <div class="sobre-item" onclick="irParaSite('github')">
-                        <img src="assets/img/github.png" alt="Cooperadores">
+                    <div class="sobre-item" onclick="irParaSite('bruno','github')">
+                        <img src="assets/img/github.png" alt="github">
                         <div class="sobre-item-text">
                                 <h3>Github</h3>
                         </div>
                     </div>
-                    <div class="sobre-item" onclick="irParaSite('portfolio')">
-                        <img src="assets/img/portfolio.png" alt="Cooperadores">
+                    <div class="sobre-item" onclick="irParaSite('bruno','portfolio')">
+                        <img src="assets/img/portfolio.png" alt="portfolio">
                         <div class="sobre-item-text">
                                 <h3>Portfólio</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="person">
+                    <img src="assets/img/Igor H. Rocha Miranda.jpg" alt="Igor">
+                    <h2>Igor H. Rocha Miranda</h2>
+                </div>
+                <div class="contato_flex">
+                    <div class="sobre-item" onclick="irParaSite('igor','linkedin')">
+                        <img src="assets/img/logotipo-do-linkedin.png" alt="linkedin">
+                        <div class="sobre-item-text">
+                                <h3>Linkedin</h3>
+                        </div>
+                    </div>
+                    <div class="sobre-item" onclick="irParaSite('igor', 'github')">
+                        <img src="assets/img/github.png" alt="github">
+                        <div class="sobre-item-text">
+                                <h3>Github</h3>
                         </div>
                     </div>
                 </div>
@@ -165,6 +192,11 @@
             <p>powered by AI</p>
             <div style="width: 20%;"></div>
             
+        </footer>
+        <footer class="menuNav" id="menu">
+            <a onclick="navbar_buttons('analisar')" role="button" id="analisarMenu" class="notranslate">Analisar notícia</a>
+            <a onclick="navbar_buttons('sobre')" role="button" id="sobreMenu" class="notranslate">Sobre</a>
+            <a onclick="navbar_buttons('contato')" role="button" id="contatoMenu" class="notranslate">Contato</a>
         </footer>
         <script src="js/main.js"></script>
 </body>

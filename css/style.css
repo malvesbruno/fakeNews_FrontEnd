@@ -1,137 +1,10 @@
 @import './utils/mixins.scss';
 @import './blocks/textBoxArea.scss';
 
+
 @font-face {
     font-family: "font_noFake";
     src: url('../assets/font/Oswald-Medium.ttf');
-}
-
-html{
-    margin: 0;
-    padding: 0;
-}
-
-body{
-    min-height: 100vh;
-    height: 100%;
-    background: radial-gradient(ellipse at bottom, #394c7b, #172341, #0A0F1C);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-nav{
-    background-color: #131c34;
-    margin: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    color: white;
-    height: 15%;
-    z-index: 2;
-}
-
-nav a{
-    font-family: 'font_noFake';
-    cursor: pointer;
-    transition: 200ms;
-    color: #10EFFD;
-    text-decoration: none;
-}
-
-nav a:hover{
-    transform: scale(1.1);
-    color: #ffffff;
-    filter: drop-shadow(0px 0px 5px #10edfdb8);
-}
-
-nav img{
-    cursor: pointer;
-    transition: 200ms;
-}
-
-nav img:hover{
-    transform: scale(1.05);
-    filter:grayscale(1) brightness(2) drop-shadow(0px 0px 5px #10edfdb8);
-}
-
-.card{
-    margin-top: 10%;
-    margin-bottom: 3em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #394c7b65;
-    backdrop-filter: blur(20px);
-    width: 80%;
-    border-radius: 10px;
-}
-
-.card h1{
-    font-family: 'font_noFake';
-    color: #ffffff;
-    filter: drop-shadow(0px 2px 5px #10edfdb8);
-}
-
-.card .sides{
-    width: 100%;
-    margin-block: 1em;
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-    flex-direction: row;
-}
-
-.card form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.card form input:focus{
-    outline: none;
-    filter: drop-shadow(0px 0px 5px #10edfd7f);
-}
-
-.card form input[type=text]::placeholder{
-    color: rgba(255, 255, 255, 0.73);
-    opacity: 1;
-}
-
-.card form textarea:focus{
-    outline: none;
-    filter: drop-shadow(0px 0px 5px #10edfd7f);
-}
-
-.card form textarea::placeholder{
-    color: rgba(255, 255, 255, 0.73);
-    opacity: 1;
-}
-
-.card h2{
-    font-family: 'font_noFake';
-    color: #10EFFD;
-    filter: drop-shadow(0px 2px 5px #0cbfccb8);
-}
-
-.floating-button.scrollspy{
-    position: fixed;
-    top: 15%;
-    right: 50%;
-    transform: translatex(50%);
-    z-index: 10;
-    display: block;
-    margin-top: 2em;
-    filter: drop-shadow(0px 2px 5px #0cbfcc58);
 }
 
 @keyframes comeDown {
@@ -146,6 +19,18 @@ nav img:hover{
     
 }
 
+@keyframes comeDownTransparent {
+    0%{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100%{
+        opacity: 80%;
+        transform: translateY(0px);
+    }
+    
+}
+
 @keyframes comeUp {
     0%{
         opacity: 100%;
@@ -154,6 +39,18 @@ nav img:hover{
     100%{
         opacity: 0%;
         transform: translateY(-20px);
+    }
+    
+}
+
+@keyframes comeUpandStay {
+    0%{
+        opacity: 0%;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateY(0px);
     }
     
 }

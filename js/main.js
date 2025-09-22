@@ -18,6 +18,13 @@ let sobre = document.getElementById('sobre')
 let contatoNav = document.getElementById("contatoNav")
 let inputNav = document.getElementById('analisarNav')
 let sobreNav = document.getElementById('sobreNav')
+let contatoMenu = document.getElementById("contatoMenu")
+let inputMenu = document.getElementById('analisarMenu')
+let sobreMenu = document.getElementById('sobreMenu')
+let menu = document.getElementById('menu')
+let menuBtn = document.getElementById('menubtn')
+
+let mediaQuerySmall = window.matchMedia("(max-width: 1024px)")
 
 
 async function buscarResultado(event){
@@ -159,45 +166,50 @@ window.addEventListener("scroll", () => {
     button.style.animation = "comeUp 0.8s ease-in-out forwards";
   } else {
     button.style.pointerEvents = "all"; // garante que aparece antes
-    button.style.opacity = "1";
-    button.style.animation = "comeDown 0.8s ease-in-out forwards";
+    mediaQuerySmall.matches ? button.style.animation = "comeDownTransparent 0.8s ease-in-out forwards"  : button.style.animation = "comeDown 0.8s ease-in-out forwards";
   }
 });
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-      if (entry.isIntersecting){
-        if(entry.target.id == 'input'){
-          inputNav.style.transform = 'scale(1.1)'
-          inputNav.style.color = "#ffffff"
-          inputNav.style.filter = "drop-shadow(0px 0px 5px #10edfdb8)"
-        }
-        else if (entry.target.id == 'sobre'){
-          sobreNav.style.transform = 'scale(1.1)'
-          sobreNav.style.color = "#ffffff"
-          sobreNav.style.filter = "drop-shadow(0px 0px 5px #10edfdb8)"
-        } else{
-          contatoNav.style.transform = 'scale(1.1)'
-          contatoNav.style.color = "#ffffff"
-          contatoNav.style.filter = "drop-shadow(0px 0px 5px #10edfdb8)"
-        }
-      } else {
-        if(entry.target.id == 'input'){
-          inputNav.style.transform = 'scale(1.0)'
-          inputNav.style.color = "#10EFFD"
-          inputNav.style.filter = "none"
-        }
-        else if (entry.target.id == 'sobre'){
-          sobreNav.style.transform = 'scale(1.0)'
-          sobreNav.style.color = "#10EFFD"
-          sobreNav.style.filter = "none"
-        } else{
-          contatoNav.style.transform = 'scale(1.0)'
-          contatoNav.style.color = "#10EFFD"
-          contatoNav.style.filter = "none"
+    let isSmall = mediaQuerySmall.matches;
+
+    if (entry.isIntersecting) {
+      if (entry.target.id === 'input') {
+        (isSmall ? inputMenu : inputNav).style.transform = 'scale(1.1)';
+        (isSmall ? inputMenu : inputNav).style.color = '#ffffff';
+        (isSmall ? inputMenu : inputNav).style.filter = 'drop-shadow(0px 0px 5px #10edfdb8)';
+      } 
+      else if (entry.target.id === 'sobre') {
+        (isSmall ? sobreMenu : sobreNav).style.transform = 'scale(1.1)';
+        (isSmall ? sobreMenu : sobreNav).style.color = '#ffffff';
+        (isSmall ? sobreMenu : sobreNav).style.filter = 'drop-shadow(0px 0px 5px #10edfdb8)';
+      } 
+      else {
+        (isSmall ? contatoMenu : contatoNav).style.transform = 'scale(1.1)';
+        (isSmall ? contatoMenu : contatoNav).style.color = '#ffffff';
+        (isSmall ? contatoMenu : contatoNav).style.filter = 'drop-shadow(0px 0px 5px #10edfdb8)';
       }
-    }});
-}, {threshold: 0.5})
+    } else {
+      if (entry.target.id === 'input') {
+        (isSmall ? inputMenu : inputNav).style.transform = 'scale(1.0)';
+        (isSmall ? inputMenu : inputNav).style.color = '#10EFFD';
+        (isSmall ? inputMenu : inputNav).style.filter = 'none';
+      } 
+      else if (entry.target.id === 'sobre') {
+        (isSmall ? sobreMenu : sobreNav).style.transform = 'scale(1.0)';
+        (isSmall ? sobreMenu : sobreNav).style.color = '#10EFFD';
+        (isSmall ? sobreMenu : sobreNav).style.filter = 'none';
+      } 
+      else {
+        (isSmall ? contatoMenu : contatoNav).style.transform = 'scale(1.0)';
+        (isSmall ? contatoMenu : contatoNav).style.color = '#10EFFD';
+        (isSmall ? contatoMenu : contatoNav).style.filter = 'none';
+      }
+    }
+  });
+}, { threshold: mediaQuerySmall?0.2: 0.5 });
+
 
 observer.observe(input)
 observer.observe(sobre)
@@ -247,19 +259,45 @@ function navbar_buttons(el){
   } else{
     element = contato
   }
-  if (el == 'analisar' || el == 'contato'){
+  if (el == 'analisar'){
   element.scrollIntoView({'behavior': 'smooth', 'block': 'end'});
   } else{
     element.scrollIntoView({'behavior': 'smooth', 'block': 'start'});
   }
 }
 
-function irParaSite(el){
+function irParaSite(name, el){
+  if (name == 'bruno'){
   if (el == 'linkedin'){
     window.open('https://www.linkedin.com/in/bruno-massuete-7a91b3234')
   } else if(el == 'github'){
     window.open('https://github.com/malvesbruno')
   } else{
     window.open('https://malvesbruno.github.io/NewPortifolio/')
+  }} else{
+    if (el == 'linkedin'){
+    window.open('https://www.linkedin.com/in/igor-rocha-')
+  } else if(el == 'github'){
+    window.open('https://github.com/Igor-hrm')
+  } else{
+    window.open('https://malvesbruno.github.io/NewPortifolio/')
+  }
+  }
+}
+
+function showMenu(){
+  let open = menuBtn.querySelector('#open');
+  let close = menuBtn.querySelector('#close')
+  console.log(open, close)
+  if (menu.style.display == 'flex'){
+    menu.style.display = 'none';
+    menuBtn.style.backgroundColor = '#8096D1'
+    open.style.display='block'
+    close.style.display='none'
+  } else{
+    menu.style.display = 'flex';
+    menuBtn.style.backgroundColor = '#131c34'
+    close.style.display='block'
+    open.style.display='none'
   }
 }
