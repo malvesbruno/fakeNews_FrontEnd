@@ -152,16 +152,6 @@ footer{
     margin-left: 1em;
 }
 
-.card .sides>.side_history{
-    width: 30%;
-    @include card-box-background-color;
-    border-radius: 10px;
-    margin-inline: 1em;
-    display: flex;
-    justify-content: center;
-}
-
-
 .resultado_place{
   width: 100%;
   min-height: 8em;
