@@ -46,21 +46,36 @@
                 </form>
             </div>
             <div class="card__sides-side_history" id="history">
-                <h2>Histórico</h2>
+                <h2 class="card__title">Histórico</h2>
                 <div class="side_history-card">
-                    <section class="side_history-block">
+                    <section class="side_history-block" id="historico_item1">
                         <div class="side_history-title">fakenews1</div>
-                        <div class="side_history-score">selo se é verdadeiro ou falso</div>
+                        <div class="side_history-score">
+                            <div class="badge">
+                                <img src="assets/img/fakeNews.png" alt="fakeNews" id="historico_item1_fake">
+                                <img src="assets/img/news.png" alt="news" id="historico_item1_true">
+                            </div>
+                        </div>
                     </section>
 
-                    <section class="side_history-block">
+                    <section class="side_history-block" id="historico_item2">
                         <div class="side_history-title">fakenews2</div>
-                        <div class="side_history-score">selo se é verdadeiro ou falso</div>
+                        <div class="side_history-score">
+                            <div class="badge">
+                                <img src="assets/img/fakeNews.png" alt="fakeNews" id="historico_item2_fake">
+                                <img src="assets/img/news.png" alt="news" id="historico_item2_true">
+                            </div>
+                        </div>
                     </section>
 
-                    <section class="side_history-block">
+                    <section class="side_history-block" id="historico_item3">
                         <div class="side_history-title">fakenews3</div>
-                        <div class="side_history-score">...</div>
+                        <div class="side_history-score">
+                            <div class="badge">
+                                <img src="assets/img/fakeNews.png" alt="fakeNews" id="historico_item3_fake">
+                                <img src="assets/img/news.png" alt="news" id="historico_item3_true">
+                            </div>
+                        </div>
                     </section>
 
                 </div>
@@ -76,13 +91,13 @@
                 </div>
                 <div class="circle_progression" style="--progress: 0.60;" id="loading"></div>
                 <div class="resultado_place__resposta" id="resposta_card">
-                    <div class="icon_position">
+                    <div class="resultado_place__resposta-icon_position">
                         <img src="assets/img/done.gif" id="true">
                         <img src="assets/img/lastFrameDone.png" style="display: none;" id="true_lf">
                         <img src="assets/img/close.gif" id="false">
                         <img src="assets/img/lastFrameClose.png" style="display: none;" id="false_lf">
                     </div>
-                    <h2 id="text_result">Provavelmente Verdadeira</h2>
+                    <h2 id="text_result" class="resultado_place__resposta-title">Provavelmente Verdadeira</h2>
                 </div>
                 <div class="resultado_place__resultado-disclaimer" id="disclaimer">
                     <p>
@@ -95,12 +110,12 @@
             </div>
         </div>
         <div class="sobre_place" id="sobre">
-                <div class="sobre" >
+                <div class="sobre_place__sobre" >
                     <h1 class="card__title">Sobre</h1>
-                    <div class="sobre_flex">
+                    <div class="sobre_place__sobre-sobre_flex">
                         <div class="sobre-item">
-                            <img src="assets/img/alvo-com-flecha.png" alt="Objetivo">
-                            <div class="sobre-item-text">
+                            <img class="sobre-item__sobre-image" src="assets/img/alvo-com-flecha.png" alt="Objetivo">
+                            <div class="sobre-item__sobre-item-text">
                                 <h3>Objetivo</h3>
                                 <p>Este projeto utiliza inteligência artificial para prever resultados de forma experimental, explorando o potencial da tecnologia na análise de informações.</p>
                             </div>
@@ -108,8 +123,8 @@
                             
 
                         <div class="sobre-item">
-                            <img src="assets/img/alerta.png" alt="Limitações">
-                            <div class="sobre-item-text">
+                            <img class="sobre-item__sobre-image" src="assets/img/alerta.png" alt="Limitações">
+                            <div class="sobre-item__sobre-item-text">
                                 <h3>Limitações</h3>
                             <p>Os resultados não são garantidos e não devem ser usados como única fonte de decisão. Recomendamos sempre a checagem em veículos confiáveis.</p>
                             </div>
@@ -117,32 +132,32 @@
                         </div>
 
                         <div class="sobre-item">
-                            <img src="assets/img/machine-learning.png" alt="Como funciona">
-                            <div class="sobre-item-text">
+                            <img class="sobre-item__sobre-image" src="assets/img/machine-learning.png" alt="Como funciona">
+                            <div class="sobre-item__sobre-item-text">
                                 <h3>Como funciona</h3>
                                 <p>Um modelo de aprendizado de máquina analisa padrões em dados previamente coletados para gerar previsões aproximadas.</p>
                             </div>
                             
                         </div>
                         <div class="sobre-item">
-                            <img src="assets/img/rede-mundial-de-computadores.png" alt="Quem está por trás">
-                            <div class="sobre-item-text">
+                            <img class="sobre-item__sobre-image" src="assets/img/rede-mundial-de-computadores.png" alt="Quem está por trás">
+                            <div class="sobre-item__sobre-item-text">
                                 <h3>Recursos visuais</h3>
                             <p>Os ícones utilizados neste site foram retirados de bibliotecas de uso livre e abertos para a comunidade. Eles ajudam a transmitir de forma simples e clara as ideias por trás de cada seção<br>Confira todos em: <a href="https://icons8.com/icons">Icons8</a> e <a href="https://www.flaticon.com">Flaticon</a></p>
                             </div>
                             
                         </div>
                         <div class="sobre-item" style="flex-basis: 100%;">
-                            <img src="assets/img/id-card.png" alt="Quem está por trás">
-                            <div class="sobre-item-text">
+                            <img class="sobre-item__sobre-image" src="assets/img/id-card.png" alt="Quem está por trás">
+                            <div class="sobre-item__sobre-item-text">
                                 <h3>Quem está por trás</h3>
                             <p>O projeto foi desenvolvido por <a href="https://github.com/malvesbruno">Bruno Massuete Alves</a> como parte de um estudo em ciência da computação e inteligência artificial.</p>
                             </div>
                             
                         </div>
                         <div class="sobre-item">
-                        <img src="assets/img/aperto-de-mao.png" alt="Cooperadores">
-                        <div class="sobre-item-text">
+                        <img class="sobre-item__sobre-image" src="assets/img/aperto-de-mao.png" alt="Cooperadores">
+                        <div class="sobre-item__sobre-item-text">
                                 <h3>Cooperadores</h3>
                             <p>
                                 Agradeço a 
@@ -157,46 +172,46 @@
                 </div>
         </div>
         <div class="contato_place">
-            <div class="contato" id="contato">
+            <div class="contato_place__contato" id="contato">
                 <h1 class="card__title">Contato</h1>
-                <div class="person">
-                    <img src="assets/img/Bruno Massuete Alves.jpg" alt="Bruno">
+                <div class="contato_place__contato-person">
+                    <img  src="assets/img/Bruno Massuete Alves.jpg" alt="Bruno">
                     <h2 class="card__subtitle">Bruno Massuete Alves</h2>
                 </div>
-                <div class="contato_flex">
+                <div class="contato_place__contato-contato_flex">
                     <div class="sobre-item" onclick="irParaSite('bruno','linkedin')">
-                        <img src="assets/img/logotipo-do-linkedin.png" alt="linkedin">
-                        <div class="sobre-item-text">
+                        <img class="sobre-item__sobre-image" src="assets/img/logotipo-do-linkedin.png" alt="linkedin">
+                        <div class="sobre-item__sobre-item-text">
                                 <h3>Linkedin</h3>
                         </div>
                     </div>
                     <div class="sobre-item" onclick="irParaSite('bruno','github')">
-                        <img src="assets/img/github.png" alt="github">
-                        <div class="sobre-item-text">
+                        <img class="sobre-item__sobre-image" src="assets/img/github.png" alt="github">
+                        <div class="sobre-item__sobre-item-text">
                                 <h3>Github</h3>
                         </div>
                     </div>
                     <div class="sobre-item" onclick="irParaSite('bruno','portfolio')">
-                        <img src="assets/img/portfolio.png" alt="portfolio">
-                        <div class="sobre-item-text">
+                        <img class="sobre-item__sobre-image" src="assets/img/portfolio.png" alt="portfolio">
+                        <div class="sobre-item__sobre-item-text">
                                 <h3>Portfólio</h3>
                         </div>
                     </div>
                 </div>
-                <div class="person">
+                <div class="contato_place__contato-person">
                     <img src="assets/img/Igor H. Rocha Miranda.jpg" alt="Igor">
                     <h2 class="card__subtitle">Igor H. Rocha Miranda</h2>
                 </div>
-                <div class="contato_flex">
+                <div class="contato_place__contato-contato_flex">
                     <div class="sobre-item" onclick="irParaSite('igor','linkedin')">
-                        <img src="assets/img/logotipo-do-linkedin.png" alt="linkedin">
-                        <div class="sobre-item-text">
+                        <img class="sobre-item__sobre-image" src="assets/img/logotipo-do-linkedin.png" alt="linkedin">
+                        <div class="sobre-item__sobre-item-text">
                                 <h3>Linkedin</h3>
                         </div>
                     </div>
                     <div class="sobre-item" onclick="irParaSite('igor', 'github')">
-                        <img src="assets/img/github.png" alt="github">
-                        <div class="sobre-item-text">
+                        <img class="sobre-item__sobre-image" src="assets/img/github.png" alt="github">
+                        <div class="sobre-item__sobre-item-text">
                                 <h3>Github</h3>
                         </div>
                     </div>
@@ -204,13 +219,13 @@
             </div>
         </div>
     </div>
-    <footer>
-            <p>© 2025 | Desenvolvido por Bruno Massuete Alves</p>
-            <p>powered by AI</p>
+    <footer class="footer">
+            <p class="footer__text">© 2025 | Desenvolvido por Bruno Massuete Alves</p>
+            <p class="footer__text">powered by AI</p>
             <div style="width: 20%;"></div>
             
         </footer>
-        <footer class="menuNav" id="menu">
+        <footer class="footer menuNav" id="menu">
             <a onclick="navbar_buttons('analisar')" role="button" id="analisarMenu" class="notranslate">Analisar notícia</a>
             <a onclick="navbar_buttons('sobre')" role="button" id="sobreMenu" class="notranslate">Sobre</a>
             <a onclick="navbar_buttons('contato')" role="button" id="contatoMenu" class="notranslate">Contato</a>
