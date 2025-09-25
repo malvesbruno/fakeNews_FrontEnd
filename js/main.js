@@ -380,7 +380,7 @@ function mostrar_historico(historico){
     historico_item1.style.display = 'block'
     historico_item2.style.display = 'block'
     historico_item3.style.display = 'none'
-  } else if(historico == 1){
+  } else if(historico.length == 1){
      // se o histórico for ígual à 1, mostra 1
     historico_item1.style.display = 'block'
     historico_item2.style.display = 'none'
