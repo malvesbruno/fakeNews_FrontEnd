@@ -1,0 +1,25 @@
+@import '../utils/mixins.scss';
+
+.footer{
+  @include nav-footer-background-color;
+  @include font-famiy-noFake;
+  @include nav-footer-text-color;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  position: relative;
+}
+
+.footer__text{
+  padding-inline: 1em;
+    flex: 1 1 40%;
+    min-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuNav{
+  display: none;
+}

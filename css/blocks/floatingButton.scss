@@ -1,0 +1,47 @@
+@import '../utils/mixins.scss';
+
+.floating-button.scrollspy{
+    position: fixed;
+    top: 15%;
+    right: 50%;
+    transform: translatex(50%);
+    z-index: 10;
+    display: block;
+    margin-top: 2em;
+    filter: drop-shadow(0px 2px 5px #0cbfcc58);
+}
+
+.floating-button.menu{
+    position: fixed;
+    bottom: 8%;
+    right: 10%;
+    transform: translatex(50%);
+    z-index: 10;
+    display: none;
+    margin-bottom: 2em;
+    filter: drop-shadow(0px 2px 5px #0cbfcc58);
+}
+
+.floating-button.scrollspy button{
+    @include text-box-background-color;
+    clip-path: circle();
+    border: none;
+    padding: 1em;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    transition: 800ms;
+    z-index: 11;
+
+
+    & img{
+      object-fit: contain;
+      width: 20%;
+      filter: invert(1);
+    }
+
+    &:hover{
+      transform: scale(1.1);
+    }
+
+}

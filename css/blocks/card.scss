@@ -1,0 +1,57 @@
+@import '../utils/mixins.scss';
+
+.card{
+    margin-top: 10%;
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #394c7b65;
+    backdrop-filter: blur(20px);
+    width: 80%;
+    border-radius: 10px;
+}
+
+.card__title{
+    font-family: 'font_noFake';
+    color: #ffffff;
+    filter: drop-shadow(0px 2px 5px #10edfdb8);
+}
+
+.card__sides{
+    width: 100%;
+    margin-block: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+.card__subtitle{
+    font-family: 'font_noFake';
+    color: #10EFFD;
+    filter: drop-shadow(0px 2px 5px #0cbfccb8);
+}
+
+.card__sides-side_input{
+    width: 70%;
+    @include card-box-background-color;
+    border-radius: 10px;
+    margin-left: 1em;
+    transition: 800ms;
+    animation: grow forwards ease-in-out 800ms;
+}
+
+.card__sides-side_history{
+    width: 30%;
+    @include card-box-background-color;
+    border-radius: 10px;
+    margin-inline: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 800ms;
+    animation: grow forwards ease-in-out 800ms;
+}

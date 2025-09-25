@@ -1,7 +1,16 @@
 @import './utils/mixins.scss';
+@import './blocks/html.scss';
+@import './blocks/navbar.scss';
+@import './blocks/card.scss';
 @import './blocks/textBoxArea.scss';
 @import './blocks/history.scss';
-
+@import './blocks/resultadoPlace.scss';
+@import './blocks/sobrePlace.scss';
+@import './blocks/sobreItem.scss';
+@import './blocks/contatoPlace.scss';
+@import './blocks/floatingButton.scss';
+@import './blocks/footer.scss';
+@import './blocks/mediaQuerys.scss';
 
 @font-face {
     font-family: "font_noFake";
@@ -76,4 +85,13 @@
         opacity: 1;
     }
     
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }

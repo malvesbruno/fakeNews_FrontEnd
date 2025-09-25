@@ -34,6 +34,7 @@ let historico_item1_fake = document.getElementById('historico_item1_fake')
 let historico_item2_fake = document.getElementById('historico_item2_fake')
 let historico_item3_fake = document.getElementById('historico_item3_fake')
 
+
 //carrega a mediaQuery para que possamos aplicar funcionalidades somente para mobile
 let mediaQuerySmall = window.matchMedia("(max-width: 1024px)")
 
@@ -49,8 +50,29 @@ async function buscarResultado(event){
     event.preventDefault(); // previne que o submit recarregue a página
 
     let text = tratarDados(); // trata os dados dos inputs
+    let title = document.getElementById('title');
+    let corpo = document.getElementById('corpo');
+    let portal = document.getElementById('portal');
+    let date = document.getElementById("date");
+
+    if (title.value.length == 0 || corpo.value.length == 0 || portal.value.length == 0 || date.value == 0){
+      if (title.length == 0){
+        title.style.border = '1px solid red'
+      }
+      if(corpo.length == 0){
+        corpo.style.border = '1px solid red'
+      }
+      if (portal.length == 0){
+        portal.style.border = '1px solid red'
+      }
+      if (date.length == 0){
+        date.style.border = '1px solid red'
+      }
+      return
+    }
+    else{
     try{
-        /* let resposta = await fetch('http://fake-news-api-env.eba-mtctpdyg.us-east-2.elasticbeanstalk.com/predict', {
+        let resposta = await fetch('http://fake-news-api-env.eba-mtctpdyg.us-east-2.elasticbeanstalk.com/predict', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -60,13 +82,13 @@ async function buscarResultado(event){
         if (!resposta.ok){
             throw new Error("Erro na requisição: " + response.status);
         }
-        let result = resposta.json();
-        console.log("Resposta da API:", result); */
+        let result = await resposta.json();
+        console.log("Resposta da API:", result.prediction);
+        result = result.prediction
 
-
-        let result = 0;
+        let titulo = retornaTituloNoticia()
         apagar_items(); // apaga os elementos antes que eles apareçam de novo. Assim habilitando o circularProgressBar
-        salvarPesquisa({'title': 'noticia Aleatória', 'true': 0});
+        salvarPesquisa({'title': titulo, 'true': result});
         let historico = pegarHistorico(); //chamamos a função de chamar o histórico novamente para que ele atualize a cada chamada 
         mostrar_historico(historico) 
 
@@ -99,6 +121,7 @@ async function buscarResultado(event){
     } catch(err) {
         console.error("Erro:", err);
     }
+  }
 }
 
 // mostra o card com a resposta
@@ -182,9 +205,18 @@ function tratarDados(){
     nomeMesAbrev = nomeMesAbrev.charAt(0).toLocaleUpperCase() + nomeMesAbrev.slice(1, -1);
     date = nomeMesAbrev + ' ' + dataSelecionada.getDay() + ', ' + dataSelecionada.getFullYear(); 
 
+    title = title.trim();
+    corpo = corpo.trim();
+    portal = portal.trim();
+
     //retorna o texto no modelo que a API usa
     let finalText = title + ' ' + corpo + ' ' + portal + ' ' + date;
     return finalText;
+}
+
+function retornaTituloNoticia(){
+  let title = document.getElementById('title').value;
+  return title;
 }
 
 // retorna para o topo da página
@@ -228,41 +260,70 @@ const observer = new IntersectionObserver((entries) => {
         (isSmall ? inputMenu : inputNav).style.transform = 'scale(1.1)';
         (isSmall ? inputMenu : inputNav).style.color = '#ffffff';
         (isSmall ? inputMenu : inputNav).style.filter = 'drop-shadow(0px 0px 5px #10edfdb8)';
+
+        input.style.opacity = '1';
+        input.style.animation ='appear forwards ease-in-out 400ms'
       } 
       else if (entry.target.id === 'sobre') {
         (isSmall ? sobreMenu : sobreNav).style.transform = 'scale(1.1)';
         (isSmall ? sobreMenu : sobreNav).style.color = '#ffffff';
         (isSmall ? sobreMenu : sobreNav).style.filter = 'drop-shadow(0px 0px 5px #10edfdb8)';
+
+        sobre.style.opacity = '1';
+        sobre.style.animation = 'appear forwards ease-in-out 400ms' 
       } 
-      else {
+      else if (entry.target.id === 'contato'){
         (isSmall ? contatoMenu : contatoNav).style.transform = 'scale(1.1)';
         (isSmall ? contatoMenu : contatoNav).style.color = '#ffffff';
         (isSmall ? contatoMenu : contatoNav).style.filter = 'drop-shadow(0px 0px 5px #10edfdb8)';
+
+        contato.style.opacity = '1';
+        contato.style.animation = 'appear forwards ease-in-out 400ms'
+      }
+      else{
+        entry.target.style.opacity = '0';
+        entry.target.style.animation = 'appear forwards ease-in-out 400ms'
       }
     } else {
       if (entry.target.id === 'input') {
         (isSmall ? inputMenu : inputNav).style.transform = 'scale(1.0)';
         (isSmall ? inputMenu : inputNav).style.color = '#10EFFD';
         (isSmall ? inputMenu : inputNav).style.filter = 'none';
+
+        input.style.opacity = '0';
+        input.style.animation = 'none';
       } 
       else if (entry.target.id === 'sobre') {
         (isSmall ? sobreMenu : sobreNav).style.transform = 'scale(1.0)';
         (isSmall ? sobreMenu : sobreNav).style.color = '#10EFFD';
         (isSmall ? sobreMenu : sobreNav).style.filter = 'none';
+
+        sobre.style.opacity = '0';
+        sobre.style.animation = 'none';
       } 
-      else {
+      else if (entry.target.id === 'contato'){
         (isSmall ? contatoMenu : contatoNav).style.transform = 'scale(1.0)';
         (isSmall ? contatoMenu : contatoNav).style.color = '#10EFFD';
         (isSmall ? contatoMenu : contatoNav).style.filter = 'none';
+
+        contato.style.opacity = '0';
+        contato.style.animation = 'none';
       }
+      else{
+        entry.target.style.opacity = '0';
+        entry.target.style.animation = 'none'
+      }
+
     }
   });
-}, { threshold: mediaQuerySmall?0.2: 0.5 });
+}, { threshold: mediaQuerySmall?0.1: 0.5 });
 
 // observa o input, sobre e o contato
 observer.observe(input)
 observer.observe(sobre)
 observer.observe(contato)
+observer.observe(history)
+observer.observe(resultado_place)
 
 
 // salva a última noticía mandada para a API

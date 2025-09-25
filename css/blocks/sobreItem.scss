@@ -1,0 +1,57 @@
+@import '../utils/mixins.scss';
+
+.sobre-item{
+      padding: 1em;
+      flex: 1 1 100%;
+      max-width: 100%;
+      display: flex;
+      flex-basis: 40%;
+      justify-content: flex-start;
+      align-items: center;
+      border-radius: 10px;
+      border: 2px solid #fff;
+      transition: 800ms;
+      cursor: default;
+      z-index: 1;
+
+      &:hover{
+      transform: scale(1.05);
+      @include text-box-background-color;
+      box-shadow: 0px 0px 10px #ffffff77;
+      z-index: 2;
+      
+      & .sobre-item__sobre-item-text{
+        & a{
+          transition: 800ms;
+          color: #3641a8;
+
+          &:hover{
+            color: #ffffff;
+          }
+        }
+      }
+    }
+    }
+
+.sobre-item__sobre-item-text{
+        margin-inline: 2em;
+
+        & a{
+          color: #9fa8fd;
+
+          &:hover{
+            color: #ffffff;
+          }
+        }
+      }
+
+.sobre-item__sobre-text{
+  color: #ffffffbb;
+  margin-left: 1em;
+}
+
+.sobre-item__sobre-image{
+  width: 15%;
+  mix-blend-mode: color-dodge;
+  filter: invert(1);
+}

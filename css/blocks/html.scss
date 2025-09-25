@@ -1,0 +1,35 @@
+@import '../utils/mixins.scss';
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #394c7b, #172341, #0A0F1C);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#inicio{
+  position: absolute;
+  top: 0;
+}
+
+.mobile_icon{
+  display: none;
+
+}
