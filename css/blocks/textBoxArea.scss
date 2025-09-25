@@ -12,7 +12,7 @@
     filter: drop-shadow(0px 0px 5px #10edfd7f);
 }
 
-.card__form-input[type=text]::placeholder{
+.card__form-input::placeholder{
     color: rgba(255, 255, 255, 0.73);
     opacity: 1;
 }
@@ -27,7 +27,7 @@
     opacity: 1;
 }
 
-.card__form-input[type=text]{
+.card__form-input{
   width: 40%;
   height: 2em;
   @include font-famiy-noFake;
