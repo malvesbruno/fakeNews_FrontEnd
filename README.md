@@ -1,4 +1,4 @@
-# Fake News Detector
+# NoFake, Fake News Detector
 
 Um site interativo que permite aos usuários verificar a veracidade de notícias em tempo real, com histórico das últimas análises.
 
@@ -110,6 +110,7 @@ Portfólio: Bruno Massuete
 
 - [Fake News Frontend](https://github.com/malvesbruno/fakeNews_FrontEnd)
  → interface do usuário
+
 
 
 
