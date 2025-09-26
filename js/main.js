@@ -72,7 +72,7 @@ async function buscarResultado(event){
     }
     else{
     try{
-        let resposta = await fetch('http://fake-news-api-env.eba-mtctpdyg.us-east-2.elasticbeanstalk.com/predict', {
+        let resposta = await fetch('https://07tamcpefa.execute-api.us-east-2.amazonaws.com/predict', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
