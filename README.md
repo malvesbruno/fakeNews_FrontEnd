@@ -80,37 +80,6 @@ npx serve dist
 .github/workflows
   └─ deploy.yml  (GitHub Actions)
 ```
-## ⚙️ Configuração do GitHub Actions
-
-- O workflow faz o build do projeto e sincroniza com o bucket S3 automaticamente:
-``` bash
-name: Deploy to AWS S3
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - run: npm install
-      - run: npx parcel build index.html --dist-dir dist
-      - uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --delete
-        env:
-          AWS_S3_BUCKET: nofake-frontend
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: us-east-2
-          SOURCE_DIR: dist
-```
 ## 📂 Histórico das pesquisas
 
 - Utiliza localStorage para manter as últimas 3 análises.
@@ -141,4 +110,5 @@ Portfólio: Bruno Massuete
 
 - [Fake News Frontend](https://github.com/malvesbruno/fakeNews_FrontEnd)
  → interface do usuário
+
 
