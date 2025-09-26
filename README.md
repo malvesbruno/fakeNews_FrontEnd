@@ -96,7 +96,7 @@ Otimizar build e deploy via CI/CD avançado.
 
 ## 🔗 Links
 
-Frontend (CloudFront HTTPS): https://<sua-distribuicao-cloudfront>.cloudfront.net
+Frontend (CloudFront HTTPS): [https://djw63257vpx0u.cloudfront.net](https://djw63257vpx0u.cloudfront.net)
 
 Backend API: http://fake-news-api-env.eba-mtctpdyg.us-east-2.elasticbeanstalk.com/predict
 
@@ -110,5 +110,6 @@ Portfólio: Bruno Massuete
 
 - [Fake News Frontend](https://github.com/malvesbruno/fakeNews_FrontEnd)
  → interface do usuário
+
 
 
