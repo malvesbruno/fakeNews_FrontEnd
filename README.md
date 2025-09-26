@@ -62,6 +62,10 @@ npx serve dist
 
 - Endpoint: http://fake-news-api-env.eba-mtctpdyg.us-east-2.elasticbeanstalk.com/predict
 
+- Route com https do API Getaway
+
+- Endpoint: https://07tamcpefa.execute-api.us-east-2.amazonaws.com/predict
+
 ## 📝 Estrutura de arquivos
 ```/src
   ├─ index.html
@@ -137,3 +141,4 @@ Portfólio: Bruno Massuete
 
 - [Fake News Frontend](https://github.com/malvesbruno/fakeNews_FrontEnd)
  → interface do usuário
+
